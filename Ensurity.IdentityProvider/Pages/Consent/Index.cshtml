@@ -1,0 +1,92 @@
+﻿@page
+@model Ensurity.IdentityProvider.Pages.Consent.IndexModel
+@{
+}
+
+<div class="page-consent">
+    <div class="lead">
+        @Model.consentViewModel.ClientName
+    </div>
+    <form asp-page="Index" method="post">
+        <input type="hidden" asp-for="consentViewModel.ReturnUrl" />
+        <div class="row">
+            <div class="col-sm-8">
+                @if (Model.consentViewModel.IdentityScopes.Any())
+                {
+                    <div class="form-group">
+                        <div class="card">
+                            <div class="card-header">
+                                <span class="glyphicon glyphicon-user"></span>
+                                Personal Information
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                @foreach (var scope in Model.consentViewModel.IdentityScopes)
+                                {
+                                  <partial name="_ScopeListItem" model="@scope" />
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                }
+
+                @if (Model.consentViewModel.ApiScopes.Any())
+                {
+                    <div class="form-group">
+                        <div class="card">
+                            <div class="card-header">
+                                <span class="glyphicon glyphicon-tasks"></span>
+                                Application Access
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                @foreach (var scope in Model.consentViewModel.ApiScopes)
+                                {
+                                 <partial name="_ScopeListItem" model="scope" />
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                }
+
+                <div class="form-group">
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="glyphicon glyphicon-tasks"></span>
+                            Description
+                        </div>
+                        <div class="card-body">
+                            <input class="form-control" placeholder="Description or name of device" asp-for="consentViewModel.Description" autofocus>
+                        </div>
+                    </div>
+                </div>
+
+                @if (Model.consentViewModel.AllowRememberConsent)
+                {
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" asp-for="consentViewModel.RememberConsent">
+                            <label class="form-check-label" asp-for="consentViewModel.RememberConsent">
+                                <strong>Remember My Decision</strong>
+                            </label>
+                        </div>
+                    </div>
+               }
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <button name="consentViewModel.Button" value="yes" class="btn btn-primary" autofocus type="submit">Yes, Allow</button>
+                <button name="consentViewModel.Button" value="no" class="btn btn-secondary" type="submit">No, Do Not Allow</button>
+            </div>
+            <div class="col-sm-4 col-lg-auto">
+                @if (Model.consentViewModel.ClientUrl != null)
+                {
+                    <a class="btn btn-outline-info" href="@Model.consentViewModel.ClientUrl">
+                        <span class="glyphicon glyphicon-info-sign"></span>
+                        <strong>@Model.consentViewModel.ClientName</strong>
+                    </a>
+                }
+            </div>
+        </div>
+    </form>
+</div>
