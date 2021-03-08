@@ -47,3 +47,47 @@
 2021-03-05 15:32:45.373 +05:30 [INF] Starting web host.
 2021-03-05 15:35:55.524 +05:30 [INF] Starting web host.
 2021-03-05 15:36:39.155 +05:30 [INF] Starting web host.
+2021-03-08 11:29:55.783 +05:30 [INF] Starting web host.
+2021-03-08 11:29:57.750 +05:30 [FTL] Host terminated unexpectedly!
+System.InvalidOperationException: Application is running inside IIS process but is not configured to use IIS server.
+   at Microsoft.AspNetCore.Server.IIS.Core.IISServerSetupFilter.<>c__DisplayClass2_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Ensurity.IdentityProvider.Program.Main(String[] args) in D:\Repos\Ensurity.IdentityProvider\Ensurity.IdentityProvider\Program.cs:line 33
+2021-03-08 11:30:16.549 +05:30 [INF] Starting web host.
+2021-03-08 11:50:27.336 +05:30 [INF] Starting web host.
+2021-03-08 11:52:17.686 +05:30 [INF] Starting web host.
+2021-03-08 11:55:51.325 +05:30 [INF] Starting web host.
+2021-03-08 11:58:33.378 +05:30 [INF] Starting web host.
+2021-03-08 12:00:31.862 +05:30 [INF] Starting web host.
+2021-03-08 12:03:19.285 +05:30 [INF] Starting web host.
+2021-03-08 12:04:31.271 +05:30 [INF] Starting web host.
+2021-03-08 12:05:48.109 +05:30 [INF] Starting web host.
+2021-03-08 12:09:28.815 +05:30 [INF] Starting web host.
+2021-03-08 12:11:03.888 +05:30 [INF] Starting web host.
+2021-03-08 12:31:46.464 +05:30 [INF] Starting web host.
+2021-03-08 14:30:49.802 +05:30 [INF] Starting web host.
+2021-03-08 14:31:25.763 +05:30 [INF] Starting web host.
+2021-03-08 14:34:54.412 +05:30 [INF] Starting web host.
+2021-03-08 14:37:36.559 +05:30 [INF] Starting web host.
+2021-03-08 14:53:46.504 +05:30 [INF] Starting web host.
+2021-03-08 14:59:44.862 +05:30 [INF] Starting web host.
+2021-03-08 15:29:34.953 +05:30 [INF] Starting web host.
+2021-03-08 15:41:41.794 +05:30 [INF] Starting web host.
+2021-03-08 15:45:41.719 +05:30 [INF] Starting web host.
+2021-03-08 15:49:39.017 +05:30 [INF] Starting web host.
+2021-03-08 15:58:01.613 +05:30 [INF] Starting web host.
+2021-03-08 15:59:28.808 +05:30 [INF] Starting web host.
+2021-03-08 16:31:30.652 +05:30 [INF] Starting web host.
+2021-03-08 16:38:05.650 +05:30 [INF] Starting web host.
+2021-03-08 17:48:11.136 +05:30 [INF] Starting web host.
+2021-03-08 17:54:35.714 +05:30 [INF] Starting web host.
+2021-03-08 17:55:13.391 +05:30 [INF] Starting web host.
+2021-03-08 17:55:47.463 +05:30 [INF] Starting web host.
+2021-03-08 17:58:27.597 +05:30 [INF] Starting web host.
+2021-03-08 17:59:14.168 +05:30 [INF] Starting web host.
+2021-03-08 18:00:19.465 +05:30 [INF] Starting web host.

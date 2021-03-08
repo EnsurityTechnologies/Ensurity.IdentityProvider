@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Ensurity.MultiTenancyServer.AspNetCore" Version="1.0.1" />
+    <PackageReference Include="Ensurity.MultiTenancyServer" Version="1.0.1" />
+    <PackageReference Include="Ensurity.MultiTenancyServer.Stores" Version="1.0.1" />
+    <PackageReference Include="Ensurity.MultiTenancyServer.EntityFrameworkCore" Version="1.0.1" />
     
     <PackageReference Include="IdentityServer4" Version="4.1.1" />
     
@@ -26,6 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Data\Migrations\" />
     <Folder Include="Logs\" />
   </ItemGroup>
 

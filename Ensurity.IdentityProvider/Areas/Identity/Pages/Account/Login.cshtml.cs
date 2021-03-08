@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Ensurity.MultiTenancyServer;
+using Microsoft.AspNetCore.Http;
 
 namespace Ensurity.IdentityProvider.Areas.Identity.Pages.Account
 {
@@ -20,14 +22,16 @@ namespace Ensurity.IdentityProvider.Areas.Identity.Pages.Account
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
+        private readonly ITenancyProvider<TenancyTenant> _tenancyProvider;
 
         public LoginModel(SignInManager<IdentityUser> signInManager, 
             ILogger<LoginModel> logger,
-            UserManager<IdentityUser> userManager)
+            UserManager<IdentityUser> userManager, ITenancyProvider<TenancyTenant> tenancyProvider)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
+            _tenancyProvider = tenancyProvider;
         }
 
         [BindProperty]
@@ -56,6 +60,7 @@ namespace Ensurity.IdentityProvider.Areas.Identity.Pages.Account
 
         public async Task OnGetAsync(string returnUrl = null)
         {
+            var currentTenant = await _tenancyProvider.GetCurrentTenantAsync();
             if (!string.IsNullOrEmpty(ErrorMessage))
             {
                 ModelState.AddModelError(string.Empty, ErrorMessage);
@@ -73,6 +78,9 @@ namespace Ensurity.IdentityProvider.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
+
+            var currentTenant = await _tenancyProvider.GetCurrentTenantAsync();
+
             returnUrl ??= Url.Content("~/");
 
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();

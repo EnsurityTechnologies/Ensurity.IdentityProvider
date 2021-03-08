@@ -1,13 +1,9 @@
 ﻿Add-Migrations
 
 
-1.  Add-Migration 001 -OutputDir "Data/Migrations/ApplicationDb" -Context ApplicationDbContext
-2.  Add-Migration 002 -OutputDir "Data/Migrations/ConfigurationDb" -Context ConfigurationDbContext
-3.  Add-Migration 003 -OutputDir "Data/Migrations/PersistedGrantDb" -Context PersistedGrantDbContext
+1.  Add-Migration 001 -OutputDir "Data/Migrations" -Context ApplicationDbContext
 
 
 Update-Databse
 
-1.  Update-Database -Context ApplicationDbContext
-2.  Update-Database -Context ConfigurationDbContext
-3.  Update-Database -Context PersistedGrantDbContext
+1.  Update-Database
