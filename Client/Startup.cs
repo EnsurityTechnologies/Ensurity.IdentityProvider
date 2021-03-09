@@ -24,7 +24,7 @@ namespace Client
                 .AddOpenIdConnect("oidc", options =>
                 {
 
-                    options.Authority = "https://raj.ensurity.com";
+                    options.Authority = "https://ensurity.ensurity.com";
                     options.ClientId = "oidcClient";
                     options.ClientSecret = "SuperSecretPassword";
 
